@@ -18,7 +18,7 @@ def subreddit():
 
     url = "https://www.reddit.com/r/"+sub['subreddit']+"/top/.json?t="+top
 
-    r = requests.get(url = url)
+    r = requests.get(url = url, headers= {'User-agent':'kindhub'})
 
     data = r.json()
 
@@ -26,4 +26,4 @@ def subreddit():
     title = data['data']['children'][0]['data']['title']
     user = data['data']['children'][0]['data']['author']
 
-    return render_template('xkcd.html',widgets=enabled_widgets,img=img,title=title,user=user)
+    return render_template('subreddit.html',widgets=enabled_widgets,img=img,title=title,user=user)
