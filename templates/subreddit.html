@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Kindhub</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+  </head>
+  <body class="bg-dark">
+    <center>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+	     {% for widg, widget in widgets.items() %}
+      <li class="nav-item">
+	      <a class="nav-link" href="{{ widget.route }}">{{ widget.strname }}</a>
+      </li>
+      {% endfor %}
+      </nav>
+      <p></p>
+
+
+      <center>
+      <p style="color:#F8F9FA">{{ title }} - /u/{{ user }}</p>
+      <p></p>
+      <img src="{{ img }}" height="400">
+      <p></p>
+
+          </center>
+
+      <footer class="bd-footer text-muted">
+  <div class="container-fluid p-3 p-md-5">
+    <p>Designed and built by Wilson McDade</p>
+    <p>mcdade@csh</p>
+  </div>
+</footer>
+</body>
+<html>
